@@ -30,6 +30,12 @@ tryMoveTestCases
                                 X,Taken O,Taken X,Empty,Taken O],4))
     ]
 
+prettyPrint'TestCases
+  = [
+      (testBoard1) ==> ("O X - O\nO - X X\nO - - X\nO X - -")
+    , (testBoard2) ==> ("X -\n- -")               
+  ]
+
 -- You can add your own test cases above
 
 allTestCases
@@ -40,6 +46,8 @@ allTestCases
                parsePositionTestCases
     , TestCase "tryMove" (uncurry3 tryMove)
                tryMoveTestCases
+    , TestCase "prettyPrint'" (prettyPrint')
+               prettyPrint'TestCases
     ]
 
 
